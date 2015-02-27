@@ -3,6 +3,11 @@ language: ruby
 rvm:
   - 2.1.2
 
+before_script:
+- "sh -e /etc/init.d/xvfb start"
+- "export DISPLAY=:99.0"
+- "export JASMINE_SPEC_FORMAT=documentation"
+
 script:
   - "bundle exec rake db:create"
   - "bundle exec rake db:migrate RAILS_ENV=test"
@@ -10,3 +15,4 @@ script:
 
 env:
   - PG_USERNAME='postgres'
+
