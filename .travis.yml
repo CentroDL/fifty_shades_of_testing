@@ -11,7 +11,7 @@ before_script:
 script:
   - "bundle exec rake db:create"
   - "bundle exec rake db:migrate RAILS_ENV=test"
-  - "bundle exec rspec"
+  - "bundle exec rake spec"
 
 env:
   - PG_USERNAME='postgres'
